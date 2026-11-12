@@ -70,3 +70,8 @@ Verdict rule: 🔴 if any Critical finding; 🟡 if any High; otherwise 🟢.
 Offer to save the result as `AGENT_ACCESS_BASELINE.md` in the project root (ask first; secrets masked) so the next run can show only what changed (`access-drift`). Recommend re-running after adding any MCP server, plugin or hook, and monthly.
 
 Close with one line offering to apply fixes with `access-hardening`.
+
+## Recurring run
+
+Recommend a cadence at the end of the report: weekly drift check (access-drift), plus right after adding any MCP server, plugin or hook.
+If the environment offers scheduled tasks (a scheduling tool is available), offer in one line to set one up, e.g. "every Monday at 09:00". Create it only after the user agrees and confirms day and time. Write the scheduled prompt so it is self-contained: what to check (project, repository or company), which skill to run, and where to deliver the result. If no scheduling tool is available, state the recommended cadence and suggest a calendar reminder.
