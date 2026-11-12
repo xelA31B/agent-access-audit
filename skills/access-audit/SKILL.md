@@ -19,7 +19,7 @@ Show what AI agents configured for a project or machine can read, run, change an
 
 - Language of the user's request. Concise, professional, no filler. Tables over paragraphs.
 - **Read-only.** Do not change any configuration during the audit. Fixes are offered afterwards (`access-hardening`).
-- **Secrets:** never print a full key, token or password; show at most the first 4 characters and where it was found.
+- **Secrets:** never open sensitive files (`.env`, keys, credential stores) and never print secret values. When an agent config file contains a value that looks like a secret, report only the key name and file.
 - Report only what you actually read. Mark files that do not exist as **not present** and files you could not open as **not checked**.
 
 ## Step 1 — Scope
@@ -35,7 +35,7 @@ Read the files listed in `references/config-locations.md` that exist. For each a
 - **Hooks:** event, command, what it can do
 - **Plugins and marketplaces:** enabled plugins, marketplace sources
 - **Instruction files:** CLAUDE.md, AGENTS.md, rules files — instructions that widen access or disable confirmations
-- **Exposed secrets reachable by the agent:** `.env` and similar files, keys inline in config, whether they are git-ignored
+- **Sensitive files:** whether `.env`-type files exist in the project and are git-ignored (presence only — never open them); whether agent config files contain values that look like inline secrets (report the key name and file, never the value)
 
 ## Step 3 — Assess risk
 
@@ -49,7 +49,7 @@ Use the rubric in `references/risk-rubric.md`. Rate each finding **Critical / Hi
 **Verdict:** 🟢 Safe / 🟡 Review needed / 🔴 Risky — one-line reason
 
 ## What your agents can do
-| Agent | Read files | Write files | Run commands | Network | Secrets reachable |
+| Agent | Read files | Write files | Run commands | Network | Sensitive files exposed |
 (✅ limited · ⚠️ broad · ❌ none · ? not checked)
 
 ## Findings
@@ -67,7 +67,7 @@ Verdict rule: 🔴 if any Critical finding; 🟡 if any High; otherwise 🟢.
 
 ## Step 5 — Baseline
 
-Offer to save the result as `AGENT_ACCESS_BASELINE.md` in the project root (ask first; secrets masked) so the next run can show only what changed (`access-drift`). Recommend re-running after adding any MCP server, plugin or hook, and monthly.
+Offer to save the result as `AGENT_ACCESS_BASELINE.md` in the project root (ask first; no secret values) so the next run can show only what changed (`access-drift`). Recommend re-running after adding any MCP server, plugin or hook, and monthly.
 
 Close with one line offering to apply fixes with `access-hardening`.
 

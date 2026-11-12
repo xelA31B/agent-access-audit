@@ -19,19 +19,19 @@ Apply least-privilege changes to AI agent configuration — safely, with a clear
 - Language of the user's request. Concise, professional, no filler.
 - **Show the diff, then ask.** Present every planned change as before/after per file and wait for explicit confirmation (all, some, none).
 - **Back up first.** Copy each file to `<file>.bak-YYYYMMDD` before editing.
-- Never print full secrets. Never move secret values into new files yourself; tell the user which environment variable to create and where.
+- Never open sensitive files or print secret values. Never move secret values yourself; tell the user which environment variable to create and where.
 - Do not remove an MCP server, plugin or hook without asking — propose disabling first.
 - If the project is a git repository, make changes on a branch `harden/agent-access` and commit there; never push without confirmation.
 
 ## Typical changes
 
-1. **Deny rules for secrets:** block reading and editing `.env*`, key files, credential files.
+1. **Deny rules for sensitive files:** block the agent from reading and editing `.env*` and key files.
 2. **Replace wildcard command permissions** with a short allow list of commands the project needs (build, test, lint, git status/diff); keep everything else on "ask".
 3. **Block destructive operations** without confirmation: recursive delete, force push, hard reset, publishing packages, production deploy commands.
 4. **Turn off auto-approve / bypass defaults**; keep them available only for sandboxed environments.
 5. **MCP servers:** pin package versions, remove unused servers, use HTTPS for remote servers, pass each server only the environment variables it needs, move inline secrets to environment variables.
 6. **Hooks and marketplaces:** disable hooks without a clear purpose; remove marketplaces from unknown sources.
-7. **Git hygiene:** add `.env*`, local settings files and baseline-irrelevant secrets to `.gitignore`.
+7. **Git hygiene:** add `.env*` and local settings files to `.gitignore`.
 8. **Instruction files:** remove instructions that disable confirmations or widen access.
 
 ## Report

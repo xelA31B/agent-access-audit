@@ -39,7 +39,7 @@ Check the paths that exist. Paths change between versions; if web search is avai
 
 - Project: `.gemini/settings.json`; user: `~/.gemini/settings.json`; instructions in `GEMINI.md`
 
-## Secrets the agent can reach
+## Sensitive files in the project (presence only)
 
-- `.env`, `.env.*`, `*.pem`, `*.key`, `credentials*.json`, cloud CLI credential folders in the home directory
-- Check `.gitignore` coverage for each
+- Check only whether files such as `.env`, `.env.*`, `*.pem` or `*.key` exist in the project folder and whether `.gitignore` covers them.
+- Do not open, read or print these files. Do not look outside the project folder for sensitive files.

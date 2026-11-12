@@ -3,7 +3,7 @@
 ## Critical
 
 - Permission checks disabled or bypassed for all actions (auto-approve everything, bypass mode as default)
-- Unrestricted shell access combined with network access and reachable secrets
+- Unrestricted shell access combined with network access and sensitive files not protected by deny rules
 - Secrets (API keys, tokens, passwords) written inline in agent or MCP configuration committed to git
 - MCP server or hook that downloads and executes remote code at start, from an unpinned or unknown source
 - Instructions in CLAUDE.md / AGENTS.md / rules telling the agent to skip confirmations for destructive actions
@@ -36,5 +36,5 @@
 ## Writing a finding
 
 - Consequence first, in plain words: what an attacker, a malicious package or a confused agent could do.
-- Point to the exact file and key; mask secrets.
+- Point to the exact file and key name; never include secret values.
 - Give the smallest fix that removes the risk.

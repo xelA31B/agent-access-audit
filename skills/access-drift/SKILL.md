@@ -17,13 +17,13 @@ Compare the current agent configuration with the saved baseline and report only 
 ## Style and safety rules
 
 - Language of the user's request. Concise, professional, no filler.
-- Read-only. Secrets masked (first 4 characters at most).
+- Read-only. Never open sensitive files or print secret values.
 
 ## Steps
 
 1. **Load the baseline** `AGENT_ACCESS_BASELINE.md`. If none exists, run `access-audit` instead and offer to save a baseline.
 2. **Collect the current configuration** exactly as `access-audit` does.
-3. **Diff** by category: permissions, MCP servers, hooks, plugins and marketplaces, instruction files, reachable secrets.
+3. **Diff** by category: permissions, MCP servers, hooks, plugins and marketplaces, instruction files, sensitive-file protection.
 4. **Assess** each change with the `access-audit` risk rubric.
 5. **Report:**
 
