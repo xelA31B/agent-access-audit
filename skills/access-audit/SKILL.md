@@ -73,5 +73,15 @@ Close with one line offering to apply fixes with `access-hardening`.
 
 ## Recurring run
 
-Recommend a cadence at the end of the report: weekly drift check (access-drift), plus right after adding any MCP server, plugin or hook.
-If the environment offers scheduled tasks (a scheduling tool is available), offer in one line to set one up, e.g. "every Monday at 09:00". Create it only after the user agrees and confirms day and time. Write the scheduled prompt so it is self-contained: what to check (project, repository or company), which skill to run, and where to deliver the result. If no scheduling tool is available, state the recommended cadence and suggest a calendar reminder.
+At the end of the report, offer a recurring run. Recommended cadence: weekly drift check (access-drift), plus right after adding any MCP server, plugin or hook.
+
+Let the user choose their own schedule. Ask in one short message, with the recommendation pre-filled:
+
+- **Frequency:** daily · weekly · every 2 weeks · monthly · quarterly · custom
+- **Day:** e.g. Monday, Friday, 1st of the month
+- **Time and time zone:** e.g. 09:00 Europe/Budapest (use the user's time zone if known)
+- **Delivery:** in this chat, a new chat, or a document
+
+If the environment offers scheduled tasks (a scheduling tool is available), create the task only after the user confirms these choices. Write the scheduled prompt so it is self-contained: what to check (project, repository or company), which skill to run, the report language, and where to deliver the result. Confirm what was scheduled in one line. The user can change or cancel the schedule at any time; when asked, update or remove it.
+
+If no scheduling tool is available, state the chosen or recommended cadence and suggest a calendar reminder.
