@@ -23,6 +23,16 @@ AI coding agents and MCP servers often get access to your files, terminal and se
 
 Covers Claude Code, Claude Desktop, Cursor, VS Code agents, Windsurf, Codex CLI and Gemini CLI configuration.
 
+## Commands
+
+Type `/` in Claude and pick a command:
+
+| Command | What it does |
+|---|---|
+| `/agent-access-check [project]` | What AI agents and MCP servers can access in this project |
+| `/agent-drift [project]` | What changed in agent access since the last audit |
+| `/agent-harden [project]` | Apply least-privilege fixes to agent configuration |
+
 ## How to use
 
 Best in Claude Code with the project open.
