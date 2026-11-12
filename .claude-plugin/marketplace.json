@@ -1,0 +1,14 @@
+{
+  "name": "agent-access-audit",
+  "owner": {
+    "name": "xelA31B"
+  },
+  "description": "Single-plugin marketplace by xelA31B: See what AI agents can read, run, change and send in your projects: Claude Code permissions, MCP servers, hooks, plugins and reachable secrets across Claude, Cursor, VS Code, Windsurf, Codex and Gemini CLI. Risk verdict, least-privilege fixes with diff and backup, and drift checks against a saved baseline.",
+  "plugins": [
+    {
+      "name": "agent-access-audit",
+      "source": "./",
+      "description": "See what AI agents can read, run, change and send in your projects: Claude Code permissions, MCP servers, hooks, plugins and reachable secrets across Claude, Cursor, VS Code, Windsurf, Codex and Gemini CLI. Risk verdict, least-privilege fixes with diff and backup, and drift checks against a saved baseline."
+    }
+  ]
+}
