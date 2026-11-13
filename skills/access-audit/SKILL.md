@@ -71,6 +71,10 @@ Offer to save the result as `AGENT_ACCESS_BASELINE.md` in the project root (ask 
 
 Close with one line offering to apply fixes with `access-hardening`.
 
+## Branded report
+
+If the environment can render HTML artifacts or files, deliver the full report using `references/report-template.html` (fill the placeholders, keep the design and colours; use the score ring for the main score and status chips for pass / warn / fail / not checked). Otherwise use the markdown format above. Keep the chat reply to a short summary either way.
+
 ## Recurring run
 
 At the end of the report, offer a recurring run. Recommended cadence: weekly drift check (access-drift), plus right after adding any MCP server, plugin or hook.
