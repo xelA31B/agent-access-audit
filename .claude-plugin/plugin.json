@@ -1,7 +1,7 @@
 {
   "name": "agent-access-audit",
   "displayName": "Agent Access Audit",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "See what AI agents can read, run, change and send in your projects: Claude Code permissions, MCP servers, hooks, plugins and unprotected sensitive files across Claude, Cursor, VS Code, Windsurf, Codex and Gemini CLI. Risk verdict, least-privilege fixes with diff and backup, and drift checks against a saved baseline.",
   "author": {
     "name": "xelA31B"
